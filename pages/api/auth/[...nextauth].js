@@ -45,7 +45,7 @@ export default NextAuth({
     async jwt({ token, account, user }) {
       //initial sign in
       if (account && user) {
-        console.log(`LOGING IN ${account.providerAccountId}`)
+        console.log(`LOGGING IN ${account.providerAccountId}`)
         return {
           ...token,
           accessToken: account.access_token,
@@ -62,7 +62,7 @@ export default NextAuth({
       }
 
       //access token expired, refresh it
-      console.log('ACCESS TOKEN HAS EXPIRED< REFRESHING...')
+      console.log('ACCESS TOKEN HAS EXPIRED REFRESHING...')
       return await refreshAccessToken(token)
     },
 
